@@ -1,0 +1,22 @@
+.Ingredient {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.Ingredient img {
+  max-height: 100px;
+  width: auto;
+  border-radius: 15px;
+  border: 1px solid;
+}
+
+.Ingredient button {
+  align-self: center;
+}
+
+.Ingredient span {
+  white-space: nowrap;
+}
