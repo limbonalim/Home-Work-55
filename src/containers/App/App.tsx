@@ -17,10 +17,10 @@ const INGREDIENTS: Filling[] = [
 
 const App = () => {
   const [ingredients, setIngredients] = useState<Counter[]>([
-    {name: 'Meat', count: 0},
+    {name: 'Meat', count: 1},
     {name: 'Bacon', count: 0},
-    {name: 'Cheese', count: 0},
-    {name: 'Salad', count: 0},
+    {name: 'Cheese', count: 1},
+    {name: 'Salad', count: 1},
   ]);
   const [total, setTotal] = useState(30);
 

@@ -1,4 +1,4 @@
-import React, {MouseEventHandler} from 'react';
+import React from 'react';
 import Ingredient from '../Ingredient/Ingredient';
 import {Filling, Counter} from '../../types';
 import './Ingredients.css';
@@ -6,8 +6,8 @@ import './Ingredients.css';
 interface Props {
   menu: Filling[];
   count: Counter[];
-  addHandler: any;
-  deleteHandler: any;
+  addHandler: (name: string) => void;
+  deleteHandler: (name: string, index: number) => void;
 }
 
 const Ingredients: React.FC<Props> = ({menu, addHandler, deleteHandler, count}) => {
