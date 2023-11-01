@@ -27,11 +27,52 @@ const App = () => {
     {name: 'Cheese', count: 0},
     {name: 'Salad', count: 0},
   ]);
+  const [total, setTotal] = useState(30);
+
+  const addIngredient = (name) => {
+    let price = INGREDIENTS.reduce((acc, item) => {
+      if (item.name === name) {
+        return acc + item.price;
+      }
+      return acc;
+    }, 0);
+    setTotal(prevState => prevState + price);
+    setIngredients(prevState => prevState.map((item) => {
+      if (name === item.name) {
+        return {...item, count: item.count + 1};
+      }
+      return item;
+    }));
+  };
+
+  const deleteIngredient = (name, quantity) => {
+    if (quantity > 0) {
+      let price = INGREDIENTS.reduce((acc, item) => {
+        if (item.name === name) {
+          return acc + item.price;
+        }
+        return acc;
+      }, 0);
+      setTotal(prevState => {
+        if (prevState > 30) {
+          return prevState - price;
+        } else {
+          return 30;
+        }
+      });
+      setIngredients(prevState => prevState.map((item) => {
+        if (name === item.name && item.count > 0) {
+          return {...item, count: item.count - 1};
+        }
+        return item;
+      }));
+    }
+  };
 
   return (
     <div className="Container">
-      <Ingredients menu={INGREDIENTS}/>
-      <Burger/>
+      <Ingredients menu={INGREDIENTS} count={ingredients} addHandler={addIngredient} deleteHandler={deleteIngredient}/>
+      <Burger price={total}/>
     </div>
   );
 };

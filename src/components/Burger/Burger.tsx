@@ -1,4 +1,4 @@
-import './Burger.css'
+import './Burger.css';
 
 const Burger = ({price}) => {
   return (
@@ -17,6 +17,6 @@ const Burger = ({price}) => {
       <div className="Price">Price: {price}</div>
     </div>
 
-);
+  );
 };
 export default Burger;

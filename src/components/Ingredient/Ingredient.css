@@ -17,6 +17,15 @@
   align-self: center;
 }
 
+.Ingredient .info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+}
+
 .Ingredient span {
   white-space: nowrap;
+
 }
+
