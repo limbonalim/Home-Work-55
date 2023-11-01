@@ -16,6 +16,7 @@ const Ingredient: React.FC<Props> = ({name, quantity, price, image, addHandler, 
       <div className="info" onClick={addHandler}>
         <img src={image} alt={name}/>
         <span>{name}</span>
+        <span>Price: {price}</span>
         <span>x {quantity}</span>
       </div>
       <button onClick={deleteHandler}>Delete</button>
