@@ -22,7 +22,7 @@ const App = () => {
     {name: 'Cheese', count: 1},
     {name: 'Salad', count: 1},
   ]);
-  const [total, setTotal] = useState(30);
+  const [total, setTotal] = useState(170);
 
   const addIngredient = (name) => {
     let price = INGREDIENTS.reduce((acc, item) => {
